@@ -67,6 +67,46 @@ public class Runnable {
     System.out.print("Printing list: ");
     rlist.printOrdered();
     System.out.println("---");
-    
+
+    //Example 11 - Push, pop, peek, isEmpty in a stack
+    Stack s = new Stack();
+    System.out.println("Stack is empty: " + s.isEmpty());
+    s.push(1);
+    System.out.println("Pushed 1");
+    s.push(2);
+    System.out.println("Pushed 2");
+    s.push(3);
+    System.out.println("Pushed 3");
+    System.out.println("Stack is empty: " + s.isEmpty());
+    System.out.println("Peeking: " + s.peek());
+    System.out.println("Popping: " + s.pop());
+    System.out.println("Peeking: " + s.peek());
+    System.out.println("Popping: " + s.pop());
+    System.out.println("Peeking: " + s.peek());
+    System.out.println("Popping: " + s.pop());
+    System.out.println("Stack is empty: " + s.isEmpty());
+
+    //Example 12 - Check if string is palindrome using stack
+    System.out.println("---");
+    String str = "abba";
+    System.out.println("Is " + str + " a palindrome? - " + isPalindrome(str));
+    String str2 = "hello";
+    System.out.println("Is " + str2 + " a palindrome? - " + isPalindrome(str2));
+  }
+
+  public static boolean isPalindrome(String str) {
+    Stack s = new Stack();
+    str = str.toLowerCase();
+    String nstr = "";
+
+    for(int i = 0 ; i < str.length(); i++) {
+      s.push((int)str.charAt(i));
+    }
+
+    while(!s.isEmpty()) {
+      nstr += (char)s.pop();
+    }
+
+    return str.equals(nstr);
   }
 }
