@@ -85,13 +85,39 @@ public class Runnable {
     System.out.println("Peeking: " + s.peek());
     System.out.println("Popping: " + s.pop());
     System.out.println("Stack is empty: " + s.isEmpty());
+    System.out.println("---");
 
     //Example 12 - Check if string is palindrome using stack
-    System.out.println("---");
     String str = "abba";
     System.out.println("Is " + str + " a palindrome? - " + isPalindrome(str));
     String str2 = "hello";
     System.out.println("Is " + str2 + " a palindrome? - " + isPalindrome(str2));
+    System.out.println("---");
+
+    //Example 13 - Queues
+    Queue q = new Queue();
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.print();
+    q.dequeue();
+    q.print();
+    q.enqueue(4);
+    q.print();
+    q.dequeue();
+    q.print();
+
+    //Example 14 - Queue implementation with 2 stacks
+    System.out.println("---");
+    SQueue k = new SQueue();
+    k.enqueue(4);
+    k.enqueue(7);
+    k.enqueue(9);
+    k.print();
+    k.enqueue(8);
+    k.print();
+    k.dequeue();
+    k.print();
   }
 
   public static boolean isPalindrome(String str) {
