@@ -106,9 +106,9 @@ public class Runnable {
     q.print();
     q.dequeue();
     q.print();
+    System.out.println("---");
 
     //Example 14 - Queue implementation with 2 stacks
-    System.out.println("---");
     SQueue k = new SQueue();
     k.enqueue(4);
     k.enqueue(7);
@@ -118,6 +118,30 @@ public class Runnable {
     k.print();
     k.dequeue();
     k.print();
+    System.out.println("---");
+
+    //Example 15 - Binary Tree
+    BinaryTree bT = new BinaryTree();
+    bT.insert(1);
+    bT.insert(2);
+    bT.insert(3);
+    System.out.print("Printing tree inorder: ");
+    printTree(bT.root);
+    System.out.println();
+    bT.insert(4);
+    System.out.print("Printing tree inorder: ");
+    printTree(bT.root);
+    System.out.println();
+    System.out.println("---");
+
+    //Example 16 - Binary Search Tree
+    BSTree bst = new BSTree();
+    bst.insert(1);
+    bst.insert(4);
+    bst.insert(100);
+    bst.insert(54);
+    System.out.print("Printing tree inorder: ");
+    printTree(bst.root);
   }
 
   public static boolean isPalindrome(String str) {
@@ -134,5 +158,13 @@ public class Runnable {
     }
 
     return str.equals(nstr);
+  }
+
+  public static void printTree(BTNode root) {
+    if(root == null) return;
+
+    printTree(root.left);
+    System.out.print(root.data + " ");
+    printTree(root.right);
   }
 }
