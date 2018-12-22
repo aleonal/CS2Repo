@@ -9,6 +9,7 @@ public class LinkedList {
         Node temp = head;
         if(temp == null) {
             head = new Node(x, null);
+            System.out.println("Added " + x + " to the end of the list");
             return;
         }
 
@@ -16,6 +17,20 @@ public class LinkedList {
             temp = temp.next;
 
         temp.next = new Node(x, null);
+
+        System.out.println("Added " + x + " to the end of the list");
+    }
+
+    public void prepend(int x) {
+        if(head == null) {
+            head = new Node(x, null);
+            return;
+        }
+
+        Node temp = new Node(x, head);
+        head = temp;
+
+        System.out.println("Added " + x + " to the front list");
     }
 
     public int remove() {
@@ -35,6 +50,23 @@ public class LinkedList {
         int data = temp.next.getData();
         temp.next = null;
         return data;
+    }
+
+    public boolean search(int x) {
+        int place = 0;
+        if(head == null) return false;
+
+        Node temp = head;
+        while(temp != null) {
+            place++;
+
+            if(temp.getData() == x) {
+                System.out.println("The element " + x + " is in node " + place);
+                return true;
+            } else temp = temp.next;
+        }
+        System.out.println("The element " + x + " was not found");
+        return false;
     }
 
     public void print() {

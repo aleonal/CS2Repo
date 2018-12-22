@@ -19,8 +19,19 @@ public class Runnable {
     list.print();
 
     //Example 4 - Remove last element in a list and return its value
-    System.out.println("Removed (" + list.remove() + ") from list");
+    System.out.println("Removed " + list.remove() + " from list");
     list.print();
+    System.out.println();
+
+    //Example 5 - Prepend element to a list
+    list.prepend(0);
+    list.print();
+    System.out.println();
+
+    //Example 6 - Search for element in a list
+    list.search(5);
+    list.search(3);
+    System.out.println();
 
   }
 }
